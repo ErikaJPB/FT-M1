@@ -3,18 +3,29 @@
 function BinarioADecimal(num) {
   
   // tu codigo aca
-
-
-let binario = String(num).split("").filter( i => i === '1' || i === "0")
-
-let resultado = 0;
-
-for (let i = 0; i < binario.length; i++) {
-  resultado = resultado + Number(binario[i] * Math.pow(2, binario.length - 1 - i) )
+  let binario = num.toString()
+  
+  let decimal = 0;
+  
+  for (let i = 0; i < binario.length; i++) {
+    if (binario.charAt(i) == '1' ) {
+      decimal = decimal + Math.pow(2, binario.length -1 - i) 
+    }
+  }
+    return decimal;
 }
+// }
 
-return resultado;
-}
+// let binario = String(num).split("").filter( i => i === '1' || i === "0")
+
+// let resultado = 0;
+
+// for (let i = 0; i < binario.length; i++) {
+//   resultado = resultado + Number(binario[i] * Math.pow(2, binario.length - 1 - i) )
+// }
+
+// return resultado;
+// }
 
 function DecimalABinario(num) {
   // tu codigo aca
@@ -41,4 +52,4 @@ let residuo = 0;
 module.exports = {
   BinarioADecimal,
   DecimalABinario,
-}
+};
